@@ -727,6 +727,8 @@ class RamdiskFormat(object):
 def _GetRamdiskFormat(info_dict):
   if info_dict.get('lz4_ramdisks') == 'true':
     ramdisk_format = RamdiskFormat.LZ4
+  elif info_dict.get('xz_ramdisks') == 'true':
+    ramdisk_format = RamdiskFormat.XZ
   else:
     ramdisk_format = RamdiskFormat.GZ
   return ramdisk_format
